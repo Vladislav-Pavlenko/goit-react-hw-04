@@ -1,0 +1,14 @@
+.btn {
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  margin: 0 auto;
+  transition: 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  margin-bottom: 20px;
+}
+
+.btn:hover {
+  background-color: rgb(62, 0, 107);
+  border-color: transparent;
+}

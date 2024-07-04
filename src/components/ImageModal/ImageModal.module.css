@@ -1,0 +1,15 @@
+.modal_conatiner {
+  position: relative;
+}
+.modal_list {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  background-color: #0000008e;
+}
+.modal_item {
+}

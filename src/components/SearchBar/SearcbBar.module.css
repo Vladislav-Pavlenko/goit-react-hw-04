@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  background-color: rgb(62, 0, 107);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.form {
+  position: relative;
+}
+.form_input {
+  background-color: transparent;
+  padding: 5px 10px;
+  padding-left: 30px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+.form_btn {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  background-color: transparent;
+  border: none;
+}
