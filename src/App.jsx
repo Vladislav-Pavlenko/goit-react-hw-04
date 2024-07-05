@@ -6,9 +6,6 @@ import Loader from "./components/Loader/Loader.jsx";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage.jsx";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn.jsx";
 import ImageModal from "./components/ImageModal/ImageModal.jsx";
-import Modal from "react-modal";
-
-Modal.setAppElement("#root");
 
 export default function App() {
   const [image, setImage] = useState([]);
@@ -19,26 +16,6 @@ export default function App() {
   const [totalPages, setTotalPages] = useState(999);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      maxWidth: "100%",
-      maxHeight: "100%",
-      overflow: "hidden",
-      border: "none",
-      padding: 0,
-      backgroundColor: "transparent",
-    },
-    overlay: {
-      backgroundColor: "rgba(0, 0, 0, 0.7)",
-    },
-  };
 
   function onSubmit(newImage) {
     setImage([]);
@@ -90,14 +67,11 @@ export default function App() {
         <ImageGallery imageArr={image} openModal={openModal} />
       )}
       {modalIsOpen && (
-        <Modal
+        <ImageModal
+          image={selectedImage}
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          contentLabel="Image Modal"
-          style={customStyles}
-        >
-          <ImageModal image={selectedImage} />
-        </Modal>
+        />
       )}
       {loader && <Loader />}
       {image.length !== 0 && page < totalPages && (
